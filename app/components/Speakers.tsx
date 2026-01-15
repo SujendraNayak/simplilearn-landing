@@ -25,7 +25,7 @@ export default function Speakers() {
   return (
     <section className="w-full py-16 px-6 bg-white">
       <div className="max-w-5xl mx-auto rounded-xl overflow-hidden bg-gradient-to-b from-[#1D4DF4] to-[#112D8E] p-8 md:p-12">
-        <h2 className="text-[#F5AB40] text-2xl font-black uppercase mb-12 italic">
+        <h2 className="text-[#F5AB40] text-2xl font-black mb-12 ">
           Featured Speakers
         </h2>
 
@@ -50,7 +50,7 @@ export default function Speakers() {
 
               {/* Speaker Info */}
               <div className="w-full md:w-2/3">
-                <h3 className="text-[#00E5FF] text-2xl font-black mb-2 uppercase">
+                <h3 className="text-[#00E5FF] text-2xl font-black mb-2 ">
                   {speaker.name}
                 </h3>
                 <p className="text-white text-sm md:text-base leading-relaxed font-medium">
@@ -61,17 +61,20 @@ export default function Speakers() {
           ))}
         </div>
 
-        <div className="mt-12 bg-[#00E5FF]/10 border border-[#00E5FF]/30 p-6 rounded-lg">
-          <h4 className="text-[#00E5FF] font-black uppercase mb-1">
-            Additional Expert Perspectives
-          </h4>
-          <p className="text-white/90 text-sm">
-            Invited experts from leading consulting and enterprise learning
-            organizations will contribute short perspectives, offering insight
-            into how large organizations are evolving skills and leadership
-            models in the AI era.
-          </p>
-        </div>
+       <div className="mt-12 bg-[#1DA1F2] p-10 rounded-xl shadow-lg">
+  {/* Heading: Using the exact Cyan from your badge for high contrast */}
+  <h4 className="text-[#00E5FF] text-3xl font-black mb-4 tracking-tight">
+    Additional Expert Perspectives
+  </h4>
+  
+  {/* Text: White with high readability */}
+  <p className="text-white text-lg font-medium leading-relaxed">
+    Invited experts from leading consulting and enterprise learning
+    organizations will contribute short perspectives, offering insight
+    into how large organizations are evolving skills and leadership
+    models in the AI era.
+  </p>
+</div>
       </div>
     </section>
   );

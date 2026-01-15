@@ -1,45 +1,77 @@
-import Link from 'next/link';
+'use client';
+
+import { Mail } from 'lucide-react';
+import Image from 'next/image';
+import { submitRSVP } from '../actions'; // Import the Server Action
 
 export default function Footer() {
-  const currentYear = new Date().getFullYear();
-
   return (
-    <footer className="w-full bg-[#021B33] text-white py-12">
-      <div className="max-w-7xl mx-auto px-6 md:px-12">
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center border-b border-gray-700 pb-8 gap-8">
-          {/* Brand Info */}
-          <div className="space-y-4">
-            <h2 className="text-2xl font-bold tracking-tighter">simplilearn</h2>
-            <p className="text-gray-400 text-sm max-w-xs">
-              Empowering professionals with the skills of tomorrow. Join our exclusive 
-              industry roundtables to stay ahead.
-            </p>
-          </div>
+    <footer className="relative w-full min-h-[450px] overflow-hidden flex flex-col justify-center">
+      {/* 1. Background Image with Dark Overlay */}
+      <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 bg-black/60 z-10" /> 
+        <Image 
+          src="/Footer.png" 
+          alt="Venue Background"
+          fill
+          className="object-cover"
+          priority
+        />
+      </div>
 
-          {/* Quick Links */}
-          <div className="flex gap-12">
-            <div className="flex flex-col gap-2">
-              <span className="font-bold text-sm uppercase text-[#00E5FF]">Event</span>
-              <Link href="#" className="text-gray-400 hover:text-white text-sm transition-colors">About</Link>
-              <Link href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Speakers</Link>
-              <Link href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Venue</Link>
+      {/* 2. Content Overlay matching Figma Option A */}
+      <div className="relative z-20 w-full max-w-6xl mx-auto px-6 py-16 flex flex-col h-full justify-between">
+        
+        {/* Top Section: CTA and Form */}
+        <div className="mb-12">
+          <h2 className="text-white text-3xl  mb-8  tracking-tighter">
+            Space is limited.
+          </h2>
+
+          <form 
+            action={async (formData) => {
+              const res = await submitRSVP(formData); // Calls your Airtable logic
+              if (res.success) {
+                alert("RSVP Confirmed!");
+              } else {
+                alert(res.error || "Airtable error");
+              }
+            }}
+            className="flex flex-col md:flex-row items-center gap-4 max-w-4xl"
+          >
+            <div className="relative w-full md:w-2/3">
+              <div className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400">
+                <Mail size={20} />
+              </div>
+              <input 
+                name="email" // Must match formData.get('email') in actions.ts
+                type="email"
+                placeholder="Enter your work email to confirm your attendance"
+                required
+                className="w-full pl-12 pr-4 py-4 bg-white border border-transparent rounded-sm text-gray-800 focus:outline-none"
+              />
             </div>
-            <div className="flex flex-col gap-2">
-              <span className="font-bold text-sm uppercase text-[#00E5FF]">Legal</span>
-              <Link href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Privacy Policy</Link>
-              <Link href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Terms of Use</Link>
-            </div>
-          </div>
+            <button 
+  type="submit"
+  className="w-full md:w-auto bg-[#F5AB40] hover:bg-[#e09b35] text-white px-12 py-5 font-bold rounded-md shadow-md transition-all whitespace-nowrap text-lg"
+>
+  RSVP now
+</button>
+          </form>
         </div>
 
-        {/* Bottom Bar */}
-        <div className="flex flex-col md:flex-row justify-between items-center pt-8 text-xs text-gray-500 gap-4">
-          <p>© {currentYear} Simplilearn. All rights reserved.</p>
-          <div className="flex gap-6">
-            <Link href="#" className="hover:text-white transition-colors">LinkedIn</Link>
-            <Link href="#" className="hover:text-white transition-colors">Twitter</Link>
-            <Link href="#" className="hover:text-white transition-colors">YouTube</Link>
+        {/* Bottom Section: Branding and Copyright */}
+        <div className="mt-12 pt-8 border-t border-white/20 flex flex-col md:flex-row justify-between items-end gap-6">
+          <div className="flex flex-col gap-2">
+            {/* Styled Logo: 'simpli' (white) + 'learn' (cyan) */}
+            <div className="text-white font-black text-3xl tracking-tighter flex items-baseline">
+              simpli<span className="text-[#00E5FF]">learn</span>
+            </div>
           </div>
+          
+          <p className="text-white/80 text-[11px] font-medium  tracking-[0.2em]">
+            © 2009-2025 - Simplilearn Solutions. All Rights Reserved.
+          </p>
         </div>
       </div>
     </footer>

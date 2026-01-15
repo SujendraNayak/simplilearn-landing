@@ -38,7 +38,7 @@ export default function Explore() {
     <section className="w-full bg-[#F0F7FF] py-16 px-6 font-satoshi">
       <div className="max-w-6xl mx-auto border border-blue-200 p-8 rounded-lg bg-white/50 shadow-sm">
         {/* Section Heading */}
-        <h2 className="text-[#F5AB40] text-3xl font-black mb-2 uppercase  tracking-tight">
+        <h2 className="text-[#F5AB40] text-3xl font-black mb-2  tracking-tight">
           What We&apos;ll Explore
         </h2>
         <p className="text-black font-bold mb-10">

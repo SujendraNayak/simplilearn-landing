@@ -25,28 +25,37 @@ export default function Hero() {
 
         {/* Badges with exact hex colors  */}
         <div className="flex items-center gap-3 mb-8">
-          <span className="bg-[#00E5FF] text-black px-4 py-1.5 rounded-sm text-[11px] font-black uppercase tracking-wider">
-            Invite-Only
-          </span>
-          <span className="text-[#00E5FF] text-sm font">
-            An Executive Roundtable · Lunch
-          </span>
-        </div>
+  <span 
+    className="bg-[#00E5FF] text-blue px-4 py-1.5 rounded-sm text-[11px] font-black tracking-wider shadow-[2px_2px_0px_rgba(0,0,0,1)]"
+    style={{ WebkitTextStroke: '0.5px black' }} // Adds the thin black border to the letters
+  >
+    Invite-Only
+  </span>
+  <span className="text-[#00E5FF] text-sm font-medium">
+    An Executive Roundtable · Lunch
+  </span>
+</div>
 
         {/* Heading Section: Bold Orange and Thin White  */}
-        <div className="max-w-5xl space-y-1">
-          {/* Main Title: Exact #F5AB40 Orange  */}
-          <h1 className="text-[#F5AB40] text-3xl md:text-5xl lg:text-6xl font-black leading-tight tracking-tight">
-            The Skills That Matter Next:
-          </h1>
-          
-          {/* Subheader: Thin Satoshi font weight  */}
-          <h2 className="text-[#F5AB40] text-3xl md:text-5xl lg:text-6xl font-light tracking-tight leading-[1.1]">
-            Preparing Your Workforce 
-          
-            & Leaders for the AI Era
-          </h2>
-        </div>
+       <div className="max-w-5xl space-y-1">
+  {/* Main Title: Size decreased from 6xl to 5xl for large screens [cite: 5, 23] */}
+  <h1 className="text-[#F5AB40] text-2xl md:text-3xl lg:text-4xl font-black leading-tight tracking-tight">
+    The Skills That Matter Next:
+  </h1>
+  
+  {/* Subheader: Size decreased from 6xl to 4xl to create a clear hierarchy  */}
+  <h2 className="text-[#F5AB40] text-2xl md:text-3xl lg:text-4xl font-light tracking-tight leading-[1.1]">
+    Preparing Your Workforce 
+    
+  </h2>
+   <h2 className="text-[#F5AB40] text-2xl md:text-3xl lg:text-4xl font-light tracking-tight leading-[1.1]">
+    
+    & Leaders for the AI Era
+  </h2>
+  
+
+
+</div>
 
         {/* Meta Info with Lucide Icons  */}
         <div className="mt-14 space-y-5 text-white">
