@@ -14,7 +14,7 @@ export default function Hero() {
           priority
         />
         {/* Dark overlay gradient to ensure readability while keeping image visible  */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#00070D] via-[#00070D]/70 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#00070D] via-[#00070D]/0 to-transparent" />
       </div>
 
       <div className="relative z-10 mx-auto max-w-7xl px-6 md:px-12 w-full text-left py-20">

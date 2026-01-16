@@ -20,7 +20,7 @@ export default function RSVPBottom() {
         {/* Left Content */}
         <div className="w-full md:w-3/5">
           {/* Heading: Decreased size to 2xl and forced small letters using 'lowercase' */}
-          <h2 className="text-[#F5AB40] font-black leading-none mb-6 text-[40px] lowercase" 
+          <h2 className="text-[#F5AB40] font-black leading-none mb-6 text-[30px] " 
     style={{ fontFamily: 'Satoshi Variable, sans-serif' }}>
   Go behind the curtain with real <br />
   examples and high-scale insights
